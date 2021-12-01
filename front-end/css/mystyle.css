@@ -11,10 +11,20 @@ nav {
 
 /* Catogeries */
 
-.cat {
+.cat a {
     margin-top: 20px;
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
+h3{
+    margin:auto;
+    width: 50%;
+}
 .my-heading {
     border-left: 12px solid #ffffff;
     padding-left: 10px;
