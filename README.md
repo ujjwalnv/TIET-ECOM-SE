@@ -11,7 +11,7 @@ Click Here:- [Node-OLX](https://node-olx.firebaseapp.com)
 
 ### 1) Clone this repo
     
-    git clone https://github.com/Saim-Akhtar/Node-OLX.git
+    git clone https://github.com/ujjwalnv/TIET-ECOM-SE.git
     
 ### 2) Install Node Modules
 Open the cmd and :-
