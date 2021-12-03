@@ -15,7 +15,7 @@ const product = require('./Products/productRoute')
 // mongoDB connection and settings
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://saim59:' + process.env.MONGODB_ATLAS_PWD + '@db-auction-system-bitsj.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://admin:' + process.env.MONGODB_ATLAS_PWD + '@cluster0.yoenv.mongodb.net/Users?retryWrites=true&w=majority', {
     useNewUrlParser: true
 })
 
@@ -28,7 +28,6 @@ app.use(morgan('combined'))
 // Parsing Body
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-
 
 
 

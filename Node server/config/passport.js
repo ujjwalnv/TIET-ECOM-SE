@@ -77,40 +77,40 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
     }
 }));
 
-passport.use('facebookToken', new FacebookTokenStrategy({
-    clientID: process.env.oauth_facebook_clientID,
-    clientSecret: process.env.oauth_facebook_clientSecret
-}, async(accessToken, refreshToken, profile, done) => {
-    try {
-        // console.log('profile', profile);
-        // console.log('accessToken', accessToken);
-        // console.log('refreshToken', refreshToken);
+// passport.use('facebookToken', new FacebookTokenStrategy({
+//     clientID: process.env.oauth_facebook_clientID,
+//     clientSecret: process.env.oauth_facebook_clientSecret
+// }, async(accessToken, refreshToken, profile, done) => {
+//     try {
+//         // console.log('profile', profile);
+//         // console.log('accessToken', accessToken);
+//         // console.log('refreshToken', refreshToken);
 
-        const existingUser = await User.findOne({ "facebook.id": profile.id });
-        if (existingUser) {
-            return done(null, existingUser);
-        }
+//         const existingUser = await User.findOne({ "facebook.id": profile.id });
+//         if (existingUser) {
+//             return done(null, existingUser);
+//         }
 
-        // the changes are made here 9/18/2019
-        const newUser = new User({
-            _id: mongoose.Types.ObjectId(),
-            method: 'facebook',
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
-            profilePic: profile.photos[0].value,
-            facebook: {
-                id: profile.id,
-                email: profile.emails[0].value,
+//         // the changes are made here 9/18/2019
+//         const newUser = new User({
+//             _id: mongoose.Types.ObjectId(),
+//             method: 'facebook',
+//             firstName: profile.name.givenName,
+//             lastName: profile.name.familyName,
+//             profilePic: profile.photos[0].value,
+//             facebook: {
+//                 id: profile.id,
+//                 email: profile.emails[0].value,
 
-            }
-        });
+//             }
+//         });
 
-        await newUser.save();
-        done(null, newUser);
-    } catch (error) {
-        done(error, false, error.message);
-    }
-}));
+//         await newUser.save();
+//         done(null, newUser);
+//     } catch (error) {
+//         done(error, false, error.message);
+//     }
+// }));
 
 
 
