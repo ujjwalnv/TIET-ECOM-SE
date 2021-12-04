@@ -95,7 +95,7 @@ h3{
 /* Handle */
 
 #search_suggestion::-webkit-scrollbar-thumb {
-    background: blue;
+    background: #bb1f1f;
     border-radius: 5px;
 }
 
@@ -103,7 +103,7 @@ h3{
 /* Handle on hover */
 
 #search_suggestion::-webkit-scrollbar-thumb:hover {
-    background: rgb(44, 44, 243);
+    background: #f44336;
 }
 
 #searchBar i,
@@ -189,11 +189,12 @@ a.carousel-item {
 /* Footer */
 
 .page-footer {
-    background-color: #1661be;
+    background-color: #bb1f1f;
 }
 
 .my-links {
     display: inline;
+    font-size: large;
 }
 
 .my-links li {
@@ -201,6 +202,9 @@ a.carousel-item {
     padding-right: 20px;
 }
 
+.my-links a{
+    color: white;
+}
 
 /* Header Design */
 
